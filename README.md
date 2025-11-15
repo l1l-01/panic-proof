@@ -27,7 +27,7 @@ Every project here is:
 
 ---
 
-## 📂 Project Map (Click to Jump)
+## 📂 Project Map
 
 | # | Project | Skill Focus | Difficulty |
 |---|--------|-------------|------------|
@@ -40,7 +40,6 @@ More coming soon — PRs welcome!
 ## ⚙️ Getting Started (3 Steps, No PhD Required)
 
 ### 1. Clone the repo
-```bash
 ```bash
 git clone https://github.com/l1l-01/panic-proof.git
 cd panic-proof
