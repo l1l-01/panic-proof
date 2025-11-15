@@ -39,19 +39,19 @@ More coming soon — PRs welcome!
 
 ## ⚙️ Getting Started (3 Steps, No PhD Required)
 
+### 1. Clone the repo
 ```bash
-# 1. Clone the repo
 ```bash
 git clone https://github.com/l1l-01/panic-proof.git
 cd panic-proof
 ```
 
-# 2. Pick a project, for example:
+### 2. Pick a project, for example:
 ```bash
 cd projects/encrypt-file
 ```
 
-# 3. Build it & Run it!
+### 3. Build it & Run it!
 ```bash
 cargo build
 cargo run
