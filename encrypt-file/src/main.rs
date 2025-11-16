@@ -1,5 +1,7 @@
+use argon2::Argon2;
 use clap::Parser;
-use std::path::Path;
+use rand::{RngCore, rngs::OsRng};
+use std::{fs, path::Path};
 
 #[derive(Parser)]
 #[command(name = "encryp-file")]
@@ -54,6 +56,24 @@ fn main() {
         cli.file
     );
 
-    // TODO: Add XOR encryption/decryption logic here
-    println!("(Encryption logic coming soon... stay tuned!)");
+    // Read the original file (_ for now)
+    let _file = fs::read(cli.file).expect("Failed to read file");
+    let password = cli.password.as_bytes();
+
+    // Generate random salt
+    let mut salt = [0u8; 16];
+    OsRng.fill_bytes(&mut salt);
+
+    // produce a 32-byte key buffer
+    let mut key = [0u8; 32];
+
+    // Argon2 derives key directly into the buffer
+    Argon2::default()
+        .hash_password_into(password, &salt, &mut key)
+        .expect("Argon2 key derivation failed");
+
+    // key now contains the 32-byte encryption key
+    println!("Key derived successfully: {} bytes", key.len());
+
+    // TODO: finish XOR encryption/decryption logic here
 }
